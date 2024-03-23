@@ -1,0 +1,94 @@
+﻿using ADSProject.Interfaces;
+using ADSProject.Models;
+
+namespace ADSProject.Repositories
+{
+    public class EstudianteRepository : IEstudiante
+    {
+        private List<Estudiante> lstEstudiantes = new List<Estudiante>
+        {
+            new Estudiante { IdEstudiante = 1, NombresEstudiante = "María Alejandra",
+                 ApellidosEstudiante = "García López", CodigoEstudiante = "sa21i04002",
+                 CorreoEstudiante = "magarcia@usonsonate.edu.sv"},
+            new Estudiante { IdEstudiante = 2, NombresEstudiante = "Juan Carlos",
+                 ApellidosEstudiante = "Hernández Martínez", CodigoEstudiante = "sa21i04003",
+                 CorreoEstudiante = "jchernandez@usonsonate.edu.sv"},
+            new Estudiante { IdEstudiante = 3, NombresEstudiante = "Karla Beatriz",
+                 ApellidosEstudiante = "Pérez Ramírez", CodigoEstudiante = "sa21i04004",
+                 CorreoEstudiante = "kbperez@usonsonate.edu.sv"},
+            new Estudiante { IdEstudiante = 4, NombresEstudiante = "Luis Eduardo",
+                 ApellidosEstudiante = "Gómez Castro", CodigoEstudiante = "sa21i04005",
+                 CorreoEstudiante = "legomez@usonsonate.edu.sv"},
+
+        };
+        public int ActualizarEstudiante(int idEstudiante, Estudiante estudiante)
+        {
+            try
+            {
+                int indice = lstEstudiantes.FindIndex(tmp => tmp.IdEstudiante == idEstudiante);
+                lstEstudiantes[indice] = estudiante;
+                return idEstudiante;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public int AgregarEstudiante(Estudiante estudiante)
+        {
+            try
+            {
+                if (lstEstudiantes.Count > 0)
+                {
+                    estudiante.IdEstudiante = lstEstudiantes.Last().IdEstudiante + 1;
+                }
+                lstEstudiantes.Add(estudiante);
+                return estudiante.IdEstudiante;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public bool EliminarEstudiante(int idEstudiante)
+        {
+            try
+            {
+                int indice = lstEstudiantes.FindIndex(tmp => tmp.IdEstudiante == idEstudiante);
+
+                lstEstudiantes.RemoveAt(indice);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        
+
+        public Estudiante ObtenerEstudiantePorID(int idEstudiante)
+        {
+            try
+            {
+                Estudiante estudiante = lstEstudiantes.FirstOrDefault(tmp => tmp.IdEstudiante == idEstudiante);
+                return estudiante;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public List<Estudiante> ObtenerTodosLosEstudiante()
+        {
+            try
+            {
+                return lstEstudiantes;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+    }
+}
