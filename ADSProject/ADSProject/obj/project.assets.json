@@ -433,11 +433,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\padil\\Downloads\\ADSProject\\ADSProject\\ADSProject\\ADSProject.csproj",
+      "projectUniqueName": "C:\\Git\\ADSProject\\ADSProject\\ADSProject\\ADSProject\\ADSProject.csproj",
       "projectName": "ADSProject",
-      "projectPath": "C:\\Users\\padil\\Downloads\\ADSProject\\ADSProject\\ADSProject\\ADSProject.csproj",
+      "projectPath": "C:\\Git\\ADSProject\\ADSProject\\ADSProject\\ADSProject\\ADSProject.csproj",
       "packagesPath": "C:\\Users\\padil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\padil\\Downloads\\ADSProject\\ADSProject\\ADSProject\\obj\\",
+      "outputPath": "C:\\Git\\ADSProject\\ADSProject\\ADSProject\\ADSProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\padil\\AppData\\Roaming\\NuGet\\NuGet.Config",
