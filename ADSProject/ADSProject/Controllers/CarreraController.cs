@@ -24,6 +24,10 @@ namespace ADSProyect.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
                 int contador = this.carrera.AgregarCarrera(carrera);
                 if (contador > 0)
                 {
@@ -53,6 +57,10 @@ namespace ADSProyect.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
                 int contador = this.carrera.ActualizarCarrera(idCarrera, carrera);
                 if (contador > 0)
                 {
