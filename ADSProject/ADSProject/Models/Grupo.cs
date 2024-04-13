@@ -1,8 +1,11 @@
-﻿using ADSProject.Validations;
+﻿using ADSProject.Interfaces;
+using ADSProject.Validations;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace ADSProject.Models
 {
+    [PrimaryKey(nameof(IdGrupo))]
     public class Grupo
     {
         public int IdGrupo { get; set; }
