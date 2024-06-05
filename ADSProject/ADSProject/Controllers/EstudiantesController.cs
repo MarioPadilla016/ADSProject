@@ -6,6 +6,7 @@ using System.Dynamic;
 namespace ADSProject.Controllers
 {
     [Route("api/estudiantes/")]
+    [ApiController]
     public class EstudiantesController : ControllerBase
     {
         private readonly IEstudiante estudiante;
@@ -23,10 +24,10 @@ namespace ADSProject.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
+                /*if (!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);
-                }
+                }*/
                 int contador = this.estudiante.AgregarEstudiante(estudiante);
                 if (contador > 0)
                 {
@@ -47,15 +48,15 @@ namespace ADSProject.Controllers
                 throw;
             }
         }
-        [HttpPut("actualizarEstudiante/{idEstudiante}")]
+        [HttpPatch("actualizarEstudiante/{idEstudiante}")]
         public ActionResult<string> ActualizarEstudiante(int idEstudiante, [FromBody] Estudiante estudiante)
         {
             try
             {
-                if (!ModelState.IsValid)
+                /*if (!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);
-                }
+                }*/
                 int contador = this.estudiante.ActualizarEstudiante(idEstudiante, estudiante);
                 if (contador > 0)
                 {
